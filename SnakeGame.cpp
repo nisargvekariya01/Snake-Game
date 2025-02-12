@@ -8,7 +8,6 @@ typedef long long int lli;
 
 enum snakesDirection { Stop = 0, Left, Right, Up, Down };
 
-// Utility functions for console manipulation
 void SetColor(int color) {
     cout << "\033[" << color << "m";
 }
