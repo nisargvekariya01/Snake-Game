@@ -396,7 +396,7 @@ int main() {
             }
 
             snake.Update();
-            if (snake.CheckFoodCollision(food.GetX(), food.GetY())) {
+            if(snake.CheckFoodCollision(food.GetX(), food.GetY())) {
                 snake.Grow();
                 food.Respawn(snake.GetTailX(), snake.GetTailY(), snake.GetTailLen());
             }
