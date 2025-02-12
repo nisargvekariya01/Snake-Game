@@ -56,11 +56,11 @@ public:
         } while(occupied);
     }
 
-    int GetX() const {
+    int GetX() {
         return x;
     }
 
-    int GetY() const {
+    int GetY(){
         return y;
     }
 };
@@ -148,39 +148,39 @@ public:
         highestScore = max(highestScore, currentScore);
     }
 
-    bool CheckFoodCollision(int foodX, int foodY) const {
+    bool CheckFoodCollision(int foodX, int foodY) {
         return x == foodX && y == foodY;
     }
 
-    bool IsGameOver() const {
+    bool IsGameOver() {
         return gameOver;
     }
 
-    int GetX() const {
+    int GetX() {
         return x;
     }
 
-    int GetY() const {
+    int GetY() {
         return y;
     }
 
-    const deque<int>& GetTailX() const {
+    const deque<int>& GetTailX() {
         return tailX;
     }
 
-    const deque<int>& GetTailY() const {
+    const deque<int>& GetTailY() {
         return tailY;
     }
 
-    int GetTailLen() const {
+    int GetTailLen() {
         return tailLen;
     }
 
-    lli GetCurrentScore() const {
+    lli GetCurrentScore() {
         return currentScore;
     }
 
-    lli GetHighestScore() const {
+    lli GetHighestScore() {
         return highestScore;
     }
 };
@@ -192,7 +192,7 @@ private:
 public:
     GameBoard(int w, int h) : width(w), height(h) {}
 
-    void Render(const Snake& snake, const Food& food, const string& playerName) {
+    void Render(Snake& snake, Food& food, string& playerName) {
         GoToXY(0, 0);
         SetColor(96);
         cout << "ssssssss  Nn    N      A      k  k  eeeeeee          gggggggg      A      Mm   mM  eeeeeee" << endl;
@@ -203,7 +203,7 @@ public:
 
         GoToXY(0, 6);
         SetColor(97);
-        for(int i = 0; i < width + 3; i++) {
+        for(int i = 0; i < width + 2; i++) {
             cout << "#";
         }
         cout << endl;
@@ -211,7 +211,7 @@ public:
         for(int i = 0; i < height; i++) {
             GoToXY(0, i + 7);
             cout << "#";
-            for(int j = 0; j <= width; j++) {
+            for(int j = 0; j < width; j++) {
                 if(i == snake.GetY() && j == snake.GetX()) {
                     SetColor(96);
                     cout << "O";
@@ -240,7 +240,7 @@ public:
             cout << "#" << endl;
         }
 
-        for(int i = 0; i < width + 3; i++) {
+        for(int i = 0; i < width + 2; i++) {
             cout << "#";
         }
         cout << endl;
@@ -259,7 +259,7 @@ public:
         cout << snake.GetHighestScore() << endl;
     }
 
-    static lli SetDifficulty() {
+    lli SetDifficulty() {
         system("cls");
         SetColor(93);
         cout << "Press 'X' to exit the game at any time.\n\nSet difficulty (1-25): ";
@@ -273,10 +273,10 @@ public:
             ResetColor();
             cin >> choice;
         }
-        return (25 - choice) * 10;
+        return (30 - choice) * 10;
     }
 
-    void ShowGameOver(const string& playerName, lli score, lli highScore) {
+    void ShowGameOver(string& playerName, lli score, lli highScore) {
         system("cls");
         SetColor(91);
         cout << "G A M E  O V E R\n\n";
@@ -289,14 +289,13 @@ public:
         SetColor(36);
         cout << highScore << "\n\n";
         SetColor(32);
-        cout << "Hi, " << playerName << "!!\n";
+        // cout << "Hi, " << playerName << "!!\n";
     }
 };
 
 int main() {
     fastio;
     hideCursor();
-    srand(static_cast<unsigned>(time(nullptr)));
 
     const int width = 90;
     const int height = 30;
@@ -307,8 +306,8 @@ int main() {
     SetColor(92);
     cout << "Enter your name: ";
     ResetColor();
-    string playerName;
-    getline(cin, playerName);
+     string playerName;
+    cin >> playerName;
 
     lli difficulty = board.SetDifficulty();
     snake.Initialize();
@@ -342,7 +341,6 @@ int main() {
                     case 'x': 
                     case 'X':
                         system("cls");
-                        SetColor(34);
                         SetColor(34);
                         cout << "Your Score: ";
                         SetColor(36);
@@ -396,7 +394,7 @@ int main() {
             }
 
             snake.Update();
-            if(snake.CheckFoodCollision(food.GetX(), food.GetY())) {
+            if (snake.CheckFoodCollision(food.GetX(), food.GetY())) {
                 snake.Grow();
                 food.Respawn(snake.GetTailX(), snake.GetTailY(), snake.GetTailLen());
             }
