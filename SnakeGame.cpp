@@ -288,7 +288,7 @@ public:
         SetColor(36);
         cout << highScore << "\n\n";
         SetColor(32);
-        cout << "Hi, " << playerName << "!!\n";
+        cout << "Hii, " << playerName << "!!\n";
     }
 };
 
