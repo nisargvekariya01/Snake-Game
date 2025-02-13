@@ -199,6 +199,7 @@ public:
         cout << "Ssssssss  N  N  N    AaaaA    kK    Eeeeeee          G   GGGG    AaaaA    M  M  M  Eeeeeee" << endl;
         cout << "       S  N   N N   A     A   k k   E                G      g   A     A   M     M  E      " << endl;
         cout << "sssssssS  N    Nn  A       A  k  k  Eeeeeee          GGGGGGGG  A       A  M     M  Eeeeeee" << endl;
+        cout << endl;
 
         GoToXY(0, 6);
         SetColor(97);
