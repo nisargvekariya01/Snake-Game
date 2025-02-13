@@ -201,7 +201,6 @@ public:
         cout << "sssssssS  N    Nn  A       A  k  k  Eeeeeee          GGGGGGGG  A       A  M     M  Eeeeeee" << endl;
         cout << endl;
 
-        GoToXY(0, 6);
         SetColor(97);
         for(int i = 0; i < width + 2; i++) {
             cout << "#";
@@ -209,7 +208,6 @@ public:
         cout << endl;
 
         for(int i = 0; i < height; i++) {
-            GoToXY(0, i + 7);
             cout << "#";
             for(int j = 0; j < width; j++) {
                 if(i == snake.GetY() && j == snake.GetX()) {
@@ -246,13 +244,11 @@ public:
         cout << endl;
         cout << endl;
 
-        GoToXY(0, height + 9);
         SetColor(34);
         cout << "Your score: ";
         SetColor(36);
         cout << snake.GetCurrentScore() << endl;
 
-        GoToXY(0, height + 10);
         SetColor(34);
         cout << "High score: ";
         SetColor(36);
