@@ -104,7 +104,7 @@ void ShowGameOver(...); // Displays final stats
 - `S`/⬇️ : Move Down  
 - `A`/⬅️ : Move Left  
 - `D`/➡️ : Move Right  
-- `ESC`: Pause the game. Press ***any key (except X)** to resume.  
+- `ESC`: Pause the game. Press **any key (except X)** to resume.  
   - If a **directional key** is pressed during pause, the snake starts moving in that direction immediately.  
 - `X`: Exit the game anytime.  
 
