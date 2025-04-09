@@ -85,12 +85,12 @@ void ShowGameOver(...); // Displays final stats
 ## 🚀 How to Run the Game  
 1. Compile the code:  
    ``` 
-   g++ t.cpp -o snake_game
+   g++ SnakeGame.cpp -o SnakeGame
    ```
      
 2. Run the executable:  
    ```
-   snake_game.exe    # Windows
+   SnakeGame.exe    # Windows
    ```
      
 3. **Follow prompts** to enter your name and select difficulty.  
