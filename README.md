@@ -6,7 +6,7 @@
 
 ### Group: TechOut
 1. **202401492** - Nisarg Vekariya
-2. **202404004** - Aum Bavarva
+2. **202404004** - [Aum Bavarva](https://github.com/AumBavarva8024)
 3. **202404032** - Aditya Rangani
 4. **202401496** - Khush Vaghela
 
